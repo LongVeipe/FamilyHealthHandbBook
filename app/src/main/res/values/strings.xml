@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Family Health Handbook</string>
+    <string name="forgot_password"><u>Quên mật khẩu?</u></string>
+    <string name="register"><u>Đăng ký</u></string>
+</resources>
