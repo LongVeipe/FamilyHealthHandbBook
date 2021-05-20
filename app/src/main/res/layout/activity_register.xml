@@ -4,7 +4,192 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Register.RegisterActivity">
+    android:orientation="vertical"
+    tools:context=".View.ForgotPassword.ForgotPasswordActivity">
 
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Tạo tài khoản"
+        >
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/avatar_ImageView"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/ic_baseline_account_circle_24">
+        </ImageView>
+        <Button
+            android:id="@+id/addAvatar_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn ảnh đại diện"
+            android:minHeight="0dp"
+            app:icon="@drawable/ic_add"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            >
+
+        </Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="50dp"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name_TextField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:background="@null"
+            android:hint="Tên"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_TextField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:background="@null"
+            android:hint="Email"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_TextField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:background="@null"
+            android:hint="Mật khẩu"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/gender_TextField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:background="@null"
+            android:hint="Giới tính"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/gender_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:enabled="false"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/birth_TextField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:hint="Ngày sinh"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/birth_EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
+                    android:singleLine="true"
+                    android:enabled="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+                <Button
+                    android:id="@+id/pickDay_Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="CHỌN"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_gravity="bottom">
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/create_Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:text="TẠO TÀI KHOẢN" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

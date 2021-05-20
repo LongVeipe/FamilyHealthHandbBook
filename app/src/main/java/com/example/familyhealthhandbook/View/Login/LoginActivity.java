@@ -16,6 +16,7 @@ import com.example.familyhealthhandbook.Model.User;
 import com.example.familyhealthhandbook.Model.responseLogin;
 import com.example.familyhealthhandbook.R;
 import com.example.familyhealthhandbook.Utils;
+import com.example.familyhealthhandbook.View.Register.RegisterActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editText_Username;
     private EditText editText_Password;
     private Button login_Button;
+    private Button register_Button;
 
     responseLogin rspLogin;
 
@@ -38,28 +40,40 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mapping();
-        setButtonLoginCLick();
-
+        init();
     }
 
-    private void setButtonLoginCLick() {
+    private void init()
+    {
+        initLogin_Button();
+        initRegister_Button();
+    }
+
+    private void initLogin_Button() {
         login_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkLogin();
-                if(rspLogin != null)
-                    Toast.makeText(getApplicationContext(), rspLogin.getUser().getName(),  Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(getApplicationContext(), "Email hoặc mật khẩu không đúng!",  Toast.LENGTH_LONG).show();
             }
         });
     }
 
+    private void initRegister_Button()
+    {
+        register_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
     private void mapping()
     {
         editText_Password = findViewById(R.id.password_EditText);
         editText_Username = findViewById(R.id.username_EditText);
         login_Button = findViewById(R.id.login_Button);
+        register_Button = findViewById(R.id.register_Button);
     }
 
     private void checkLogin()
@@ -69,10 +83,13 @@ public class LoginActivity extends AppCompatActivity {
         Utils.getApi().SingIn(email, pass).enqueue(new Callback<responseLogin>() {
             @Override
             public void onResponse(Call<responseLogin> call, Response<responseLogin> response) {
-
-                if(response.isSuccessful() && response.body() != null)
-
+                rspLogin = null;
+                if(response.isSuccessful() && response.body() != null) {
                     rspLogin = response.body();
+                    Toast.makeText(getApplicationContext(), "Đăng nhập thành công\n" + rspLogin.getUser().getName(), Toast.LENGTH_SHORT).show();
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "Email hoặc mật khẩu không đúng!",  Toast.LENGTH_SHORT).show();
             }
 
             @Override
