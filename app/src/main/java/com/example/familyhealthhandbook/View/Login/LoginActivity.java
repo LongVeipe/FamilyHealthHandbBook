@@ -2,7 +2,6 @@ package com.example.familyhealthhandbook.View.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,15 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.familyhealthhandbook.MainActivity;
-import com.example.familyhealthhandbook.Model.User;
+import com.example.familyhealthhandbook.View.Main.MainActivity;
 import com.example.familyhealthhandbook.Model.responseLogin;
 import com.example.familyhealthhandbook.R;
 import com.example.familyhealthhandbook.Utils;
 import com.example.familyhealthhandbook.View.Register.RegisterActivity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

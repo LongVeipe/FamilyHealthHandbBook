@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_home"
+        android:icon="@drawable/home_selector"
+        android:title="@string/action_home"/>
+    <item android:id="@+id/action_groups"
+        android:icon="@drawable/groups_selector"
+        android:title="@string/action_groups"/>
+    <item android:id="@+id/action_covid"
+        android:icon="@drawable/covid_selector"
+        android:title="@string/action_covid"/>
+
+</menu>

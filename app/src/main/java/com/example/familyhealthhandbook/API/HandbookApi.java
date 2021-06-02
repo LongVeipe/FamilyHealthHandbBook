@@ -1,5 +1,6 @@
 package com.example.familyhealthhandbook.API;
 
+import com.example.familyhealthhandbook.Model.News;
 import com.example.familyhealthhandbook.Model.User;
 import com.example.familyhealthhandbook.Model.responseLogin;
 
@@ -11,6 +12,7 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -29,4 +31,7 @@ public interface HandbookApi {
                                  @Part("gender") int gender,
                                  @Part("yearOfBirth") int year,
                                  @Part MultipartBody.Part avatar);
+
+    @GET("news")
+    Call<List<News>> GetNews();
 }
