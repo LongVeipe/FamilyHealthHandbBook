@@ -1,5 +1,6 @@
 package com.example.familyhealthhandbook.API;
 
+import com.example.familyhealthhandbook.Model.Group;
 import com.example.familyhealthhandbook.Model.News;
 import com.example.familyhealthhandbook.Model.User;
 import com.example.familyhealthhandbook.Model.responseLogin;
@@ -13,6 +14,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -34,4 +36,8 @@ public interface HandbookApi {
 
     @GET("news")
     Call<List<News>> GetNews();
+
+
+    @GET("users/joined-groups")
+    Call<List<Group>> GetJoinedGroups(@Header("access-token") String token);
 }

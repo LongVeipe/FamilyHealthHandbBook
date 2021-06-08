@@ -2,7 +2,9 @@ package com.example.familyhealthhandbook.View.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +23,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+
+    public static final String SHARED_PREFERENCES_LOGIN = "shared_preferences_login";
+    public static final String TOKEN = "token";
 
     private EditText editText_Username;
     private EditText editText_Password;
@@ -82,6 +87,10 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.isSuccessful() && response.body() != null) {
                     rspLogin = response.body();
                     Toast.makeText(getApplicationContext(), "Đăng nhập thành công\n" + rspLogin.getUser().getName(), Toast.LENGTH_SHORT).show();
+                    saveToken(rspLogin.getToken());
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    //intent.putExtra()
+                    startActivity(intent);
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Email hoặc mật khẩu không đúng!",  Toast.LENGTH_SHORT).show();
@@ -95,10 +104,11 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void login()
+    void saveToken(String token)
     {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        //intent.putExtra()
-        startActivity(intent);
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_LOGIN, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(TOKEN,token);
+        editor.apply();
     }
 }
