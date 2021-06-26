@@ -68,7 +68,7 @@
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null"
                 android:singleLine="true"
-                android:text="quyena357@gmail.com"
+                android:text="quangquya2@gmail.com"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>

@@ -7,9 +7,9 @@ import java.io.Serializable;
 import java.util.List;
 
 public class User implements Serializable {
-    @SerializedName("id")
+    @SerializedName("_id")
     @Expose
-    private int id;
+    private String _id;
     @SerializedName("name")
     @Expose
     private String name;
@@ -32,8 +32,8 @@ public class User implements Serializable {
     @Expose
     private String avatar;
 
-    public User(String name, String email, String password, int gender, int yearOfBirth, int permission, String avatar) {
-        this.id = id;
+    public User(String _id, String name, String email, String password, int gender, int yearOfBirth, int permission, String avatar) {
+        this._id = _id;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -43,13 +43,12 @@ public class User implements Serializable {
         this.avatar = avatar;
     }
 
-
-    public int getId() {
-        return id;
+    public String get_id() {
+        return _id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getName() {
@@ -107,5 +106,4 @@ public class User implements Serializable {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
-
 }

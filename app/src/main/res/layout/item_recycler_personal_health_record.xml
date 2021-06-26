@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@+id/health_record_card"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/firstImg_iv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:maxHeight="200dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY">
+            </ImageView>
+            <TextView
+                android:id="@+id/location_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="20dp"
+                android:text="Bệnh viện ..."
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sickness_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="20dp"
+                android:text="Bệnh...."
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="20dp"
+                android:text="Ngày khám: "
+                android:textColor="@color/black"/>
+            <View
+                style="@style/Divider"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/share_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="Chia sẻ"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:minHeight="0dp"
+                app:icon="@drawable/ic_baseline_share_24"
+                app:iconGravity="textStart"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/popupMenu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentRight="true"
+            app:icon="@drawable/ic_baseline_more_horiz_24"
+            app:iconPadding="0dp"
+            android:backgroundTint="@color/light_gray"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            app:cornerRadius="20dp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

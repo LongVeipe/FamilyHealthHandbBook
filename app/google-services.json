@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "31312363590",
+    "project_id": "family-health-handbook",
+    "storage_bucket": "family-health-handbook.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31312363590:android:9ccbe7d56fcfffe7014a47",
+        "android_client_info": {
+          "package_name": "family.health.handbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31312363590-v0urldqd7l0i8fg7usiu4ndlpmqth431.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-2JFkx2YmbPJmiZ-tQbO_3s5wMZCDXek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31312363590-v0urldqd7l0i8fg7usiu4ndlpmqth431.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,9 +10,9 @@ public class Group implements Serializable {
     @SerializedName("members")
     @Expose
     private List<String> members;
-    @SerializedName("id")
+    @SerializedName("_id")
     @Expose
-    private String id;
+    private String _id;
     @SerializedName("master")
     @Expose
     private String master;
@@ -35,9 +35,9 @@ public class Group implements Serializable {
     @Expose
     private String UpdateAt;
 
-    public Group(List<String> members, String id, String master, String name, String description, String avatar, String inviteCode, String createAt, String updateAt) {
+    public Group(List<String> members, String _id, String master, String name, String description, String avatar, String inviteCode, String createAt, String updateAt) {
         this.members = members;
-        this.id = id;
+        this._id = _id;
         this.master = master;
         this.name = name;
         this.description = description;
@@ -56,11 +56,11 @@ public class Group implements Serializable {
     }
 
     public String getId() {
-        return id;
+        return _id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this._id = id;
     }
 
     public String getMaster() {

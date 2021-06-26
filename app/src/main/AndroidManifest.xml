@@ -3,22 +3,29 @@
     package="com.example.familyhealthhandbook">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:requestLegacyExternalStorage="true"
+        android:name=".View.Main.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FamilyHealthHandbook"
         android:usesCleartextTraffic="true">
-        <activity android:name=".View.Register.RegisterActivity"
-            android:parentActivityName=".View.Login.LoginActivity">
-
-        </activity>
-        <activity android:name=".View.ForgotPassword.ForgotPasswordActivity"></activity>
+        <activity android:name=".View.Members.MembersActivity"></activity>
+        <activity android:name=".View.GroupProfile.GroupProfileActivity" />
+        <activity android:name=".View.Personal.PersonalActivity" />
+        <activity android:name=".View.Image.ImageActivity" />
+        <activity android:name=".View.Conversation.ConversationActivity" />
+        <activity
+            android:name=".View.Register.RegisterActivity"
+            android:parentActivityName=".View.Login.LoginActivity" />
+        <activity android:name=".View.ForgotPassword.ForgotPasswordActivity" />
         <activity android:name=".View.Login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,9 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.Main.MainActivity">
-
-        </activity>
+        <activity android:name=".View.Main.MainActivity" />
     </application>
 
 </manifest>

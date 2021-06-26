@@ -17,6 +17,7 @@ import com.example.familyhealthhandbook.Model.responseLogin;
 import com.example.familyhealthhandbook.R;
 import com.example.familyhealthhandbook.Utils;
 import com.example.familyhealthhandbook.View.Register.RegisterActivity;
+import com.google.firebase.FirebaseApp;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public static final String SHARED_PREFERENCES_LOGIN = "shared_preferences_login";
     public static final String TOKEN = "token";
+    public static final String ID_USER = "idUser";
+    public static final String AVATAR = "avatar";
 
     private EditText editText_Username;
     private EditText editText_Password;
@@ -41,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mapping();
         init();
+
     }
 
     private void init()
@@ -87,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.isSuccessful() && response.body() != null) {
                     rspLogin = response.body();
                     Toast.makeText(getApplicationContext(), "Đăng nhập thành công\n" + rspLogin.getUser().getName(), Toast.LENGTH_SHORT).show();
-                    saveToken(rspLogin.getToken());
+                    saveUser(rspLogin);
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     //intent.putExtra()
                     startActivity(intent);
@@ -104,11 +108,13 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    void saveToken(String token)
+    void saveUser(responseLogin rspLogin)
     {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_LOGIN, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(TOKEN,token);
+        editor.putString(TOKEN,rspLogin.getToken());
+        editor.putString(ID_USER, rspLogin.getUser().get_id());
+        editor.putString(AVATAR, rspLogin.getUser().getAvatar());
         editor.apply();
     }
 }

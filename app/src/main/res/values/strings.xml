@@ -7,6 +7,14 @@
     <string name="action_covid">Covid-19</string>
     <string name="news_title">Đây là tiêu đề ...............................................</string>
     <string name="news_description">Đây là mô tả...........................................</string>
+    <string name="option_edit">Chỉnh sửa</string>
+    <string name="option_delete">Xóa</string>
+    <string name="option_transferPer">Chuyển quyền quản trị</string>
+    <string name="option_kick">Xóa thành viên</string>
+    <string name="menu_info">Thông tin</string>
+    <string name="channel_name">SOS Channel</string>
+    <string name="channel_description">Cuộc gọi khẩn cấp</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
